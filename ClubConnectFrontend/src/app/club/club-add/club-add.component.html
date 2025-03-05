@@ -1,0 +1,67 @@
+<app-breadcrumb [title]="'Form Validation'" [items]="['Forms', 'Form Control']" [active_item]="'Form Validation'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Add a New Club</h5>
+          <span>Fill out the form below to add a new club.</span>
+        </div>
+        <div class="card-body">
+          <form class="needs-validation" novalidate [ngClass]="{ 'was-validated': validate }" (ngSubmit)="submit()">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label" for="nameC">Club Name</label>
+                <input class="form-control" id="nameC" type="text" placeholder="Enter club name" [(ngModel)]="newClub.nameC" name="nameC" required>
+                <div class="invalid-feedback">Please enter a club name.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="description">Description</label>
+                <input class="form-control" id="description" type="text" placeholder="Enter description" [(ngModel)]="newClub.description" name="description" required>
+                <div class="invalid-feedback">Please enter a description.</div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="categorie">Category</label>
+                <select class="form-select" id="categorie" [(ngModel)]="newClub.categorie" name="categorie" required>
+                  <option *ngFor="let category of CategValues" [value]="category">{{ category }}</option>
+                </select>
+                <div class="invalid-feedback">Please select a category.</div>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="logo">Logo</label>
+                <input class="form-control" id="logo" type="file" (change)="onFileSelected($event)" accept="image/*" required>
+               <!-- <input class="form-control" id="logo" type="text" placeholder="Enter logo URL" [(ngModel)]="newClub.logo" name="logo" required>  -->
+               <div class="invalid-feedback">Please enter a logo URL.</div>
+              </div> 
+            
+              <!-- <div class="col-md-6">
+                <label class="form-label" for="logo">Logo</label>
+                <input class="form-control" id="logo" type="file" (change)="onFileSelected($event)" accept="image/*" required>
+                <div class="invalid-feedback">Please select a logo image.</div>
+              </div>
+               -->
+            
+            
+
+              <div class="col-md-6">
+                <label class="form-label" for="websiteURL">Website URL</label>
+                <input class="form-control" id="websiteURL" type="text" placeholder="Enter website URL" [(ngModel)]="newClub.websiteURL" name="websiteURL" required>
+                <div class="invalid-feedback">Please enter a website URL.</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" id="agreeTerms" type="checkbox" [(ngModel)]="agreeTerms" name="agreeTerms" required>
+                <label class="form-check-label" for="agreeTerms">Agree to terms and conditions</label>
+                <div class="invalid-feedback">You must agree to the terms and conditions.</div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit Form</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

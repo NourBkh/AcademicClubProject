@@ -1,0 +1,228 @@
+<!-- project-prediction.component.html -->
+
+<!--<div *ngIf="predictionData">
+  <div>
+    <h2>Prediction Data</h2>
+    <ul>
+      <li><strong>Club ID:</strong> {{ predictionData.clubId }}</li>
+      <li><strong>Period in Months:</strong> {{ predictionData.periodInMonths }}</li>
+      <li><strong>Total Funds Raised:</strong> {{ predictionData.totalFundsRaised }}</li>
+      <li><strong>Average Project Cost:</strong> {{ predictionData.averageProjectCost }}</li>
+      <li><strong>Months Sustainable:</strong> {{ predictionData.monthsSustainable }}</li>
+      <li><strong>Number of Projects in Period:</strong> {{ predictionData.numberOfProjectsInPeriod }}</li>
+      <li><strong>Required Funds:</strong> {{ predictionData.requiredFunds }}</li>
+      <li><strong>Advice Message:</strong> {{ predictionData.adviceMessage }}</li>
+    </ul>
+  </div>
+</div>-->
+
+
+<!-- <div class="row m-0">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-header card-no-border">
+        <h5>Real-Time-Data Overview</h5>
+      </div>
+      <div class="card-body pt-0">
+        <ng-container *ngIf="predictionData">
+          <div class="card-block">
+            <div>
+              <span class="f-light">Period in Months:</span>
+              <h6 class="mt-1 mb-0">{{ predictionData.periodInMonths }}</h6>
+            </div>
+            <div>
+              <span class="f-light">Total Funds Raised:</span>
+              <h6 class="mt-1 mb-0">{{ predictionData.totalFundsRaised }}</h6>
+            </div>
+            <div>
+              <span class="f-light">Months Sustainable:</span>
+              <h6 class="mt-1 mb-0">{{ predictionData.monthsSustainable }}</h6>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-header card-no-border">
+        <h5>Predictions For Provided Months </h5>
+      </div>
+      <div class="card-body pt-0">
+        <ng-container *ngIf="predictionData">
+          <div class="card-block">
+            <div>
+              <span class="f-light">Average Project Cost:</span>
+              <h6 class="mt-1 mb-0">{{ predictionData.averageProjectCost }}</h6>
+            </div>
+            <div>
+              <span class="f-light">Number of Projects:</span>
+              <h6 class="mt-1 mb-0">{{ predictionData.numberOfProjectsInPeriod }}</h6>
+            </div>
+            <div>
+              <span class="f-light">Required Funds:</span>
+              <h6 class="mt-1 mb-0">{{ predictionData.requiredFunds }}</h6>
+            </div>
+            <div>
+              <span class="f-light">Advice Message:</span>
+              <h6 class="mt-1 mb-0">{{ predictionData.adviceMessage }}</h6>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="row m-0">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-header card-no-border bg-primary text-light">
+        <h5><i class="fas fa-chart-line"></i> Real-Time Data Overview</h5>
+      </div>
+      <div class="card-body pt-0">
+        <ng-container *ngIf="predictionData">
+          <div class="card-block">
+            <div>
+              <div class="larger-and-colored">
+                <span class="f-bold f-24"><i class="fas fa-calendar-alt"></i> Period in Months:</span>
+              </div>
+              <div>
+                <span class="f-light">
+                  <i class="fas fa-calendar-alt" style="color: violet;"></i>
+                  <h6 class="mt-1 mb-0" style="color: violet;">{{ predictionData.periodInMonths }}</h6>
+                </span>
+              </div>
+            </div>
+          
+            <div class="larger-and-colored">
+              <span class="f-bold f-24"><i class="fas fa-calendar-alt"></i> Total Funds Raised:</span>
+            </div>
+            <div>
+              <span class="f-light">
+                <i class="fas fa-calendar-alt" style="color: violet;"></i>
+                <h6 class="mt-1 mb-0" style="color: violet;">{{ predictionData.totalFundsRaised }}</h6>
+              </span>
+            </div>
+          
+            <div class="larger-and-colored">
+              <span class="f-bold f-24"><i class="fas fa-calendar-alt"></i> Months Sustainable:</span>
+            </div>
+            <div>
+              <span class="f-light">
+                <i class="fas fa-calendar-alt" style="color: violet;"></i>
+                <h6 class="mt-1 mb-0" style="color: violet;">{{ predictionData.monthsSustainable }}</h6>
+              </span>
+              <img src="https://st.depositphotos.com/2801893/3978/v/600/depositphotos_39788515-stock-illustration-research.jpg" width="200" alt="Image" />
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-header card-no-border bg-success text-light">
+        <h5><i class="far fa-chart-bar"></i> Predictions For Provided Months</h5>
+      </div>
+      <div class="card-body pt-0">
+        <ng-container *ngIf="predictionData">
+          <div class="card-block">
+          
+
+            <div class="larger-and-colored">
+              <span class="f-bold f-24"><i class="fas fa-calendar-alt"></i> Average Project Cost:</span>
+            </div>
+            <div>
+              <span class="f-light">
+                <i class="fas fa-calendar-alt" style="color: violet;"></i>
+                <h6 class="mt-1 mb-0" style="color: violet;">{{ predictionData.averageProjectCost }}</h6>
+              </span>
+            </div>
+         
+            <div class="larger-and-colored">
+              <span class="f-bold f-24"><i class="fas fa-calendar-alt"></i> Number of Projects:</span>
+            </div>
+            <div>
+              <span class="f-light">
+                <i class="fas fa-calendar-alt" style="color: violet;"></i>
+                <h6 class="mt-1 mb-0" style="color: violet;">{{ predictionData.numberOfProjectsInPeriod }}</h6>
+              </span>
+            </div>
+
+
+         
+
+
+            <div class="larger-and-colored">
+              <span class="f-bold f-24"><i class="fas fa-calendar-alt"></i> Required Funds:</span>
+            </div>
+            <div>
+              <span class="f-light">
+                <i class="fas fa-calendar-alt" style="color: violet;"></i>
+                <h6 class="mt-1 mb-0" style="color: violet;">{{ predictionData.requiredFunds }}</h6>
+              </span>
+              <img src="https://st3.depositphotos.com/3004689/15520/v/600/depositphotos_155206302-stock-illustration-crystal-ball-with-purple-female.jpg" width="200" alt="Image" />
+            </div>
+
+          
+
+           <!-- <div class="larger-and-colored">
+              <span class="f-bold f-24"><i class="fas fa-calendar-alt"></i>Advice Message:</span>
+            </div>
+            <div>
+              <span class="f-light">
+                <i class="fas fa-calendar-alt" style="color: violet;"></i>
+                <h6 class="mt-1 mb-0" style="color: violet;">{{ predictionData.adviceMessage }}</h6>
+              </span>
+            </div>-->
+
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mt-4">
+  <div class="col">
+    <div class="card">
+     
+      <div class="card-body">
+        <ng-container *ngIf="predictionData">
+          <div class="card-block">
+            <div class="larger-and-colored">
+              <span class="f-bold f-24"><img src="https://st5.depositphotos.com/35426512/68037/v/600/depositphotos_680371686-stock-illustration-top-tips-sign-flat-purple.jpg" width="200" alt="Image" /><i class="fas fa-comment"></i>                <h6 class="mt-1 mb-0" style="font-family: 'Roboto', sans-serif; font-size: 18px; color: #4a4a4a; line-height: 1.6;">{{ predictionData.adviceMessage }}</h6>
+              </span>
+            </div>
+            <div>
+              <span class="f-light">
+                <i class="fas fa-comment" style="color: rgb(141, 12, 141);"></i>
+               <!---- <h6 class="mt-1 mb-0" style="font-family: 'Roboto', sans-serif; font-size: 18px; color: #4a4a4a; line-height: 1.6;">{{ predictionData.adviceMessage }}</h6>-->
+
+              </span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row mt-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-header card-no-border bg-info text-light">
+        <h5><i class="far fa-chart-bar"></i> Chart of Prediction Data</h5>
+      </div>
+      <div class="card-body">
+        <canvas #predictionChartCanvas></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+

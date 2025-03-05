@@ -1,0 +1,64 @@
+<div class="appointment-cards-container">
+    <div class="appointment">
+      <div class="card">
+        <div class="card-header card-no-border">
+          <div class="header-top">
+            <h5 class="m-0">Users Predicted to Leave</h5>
+          </div>
+        </div>
+        <div class="card-body pt-0">
+          <div class="appointment-table customer-table table-responsive">
+            <table class="table table-bordernone">
+              <tbody>
+                <tr *ngFor="let user of predictedUsersToLeave">
+                  <td>
+                    <img class="img-fluid img-40 rounded-circle me-2" src="https://st2.depositphotos.com/1007566/12271/v/600/depositphotos_122718586-stock-illustration-avatar-man-cartoon.jpg" width="50" alt="user" />
+                  </td>
+                  <td class="img-content-box">
+                    <a class="f-w-500" [routerLink]="'user-profile/' + user.id">{{ user.firstName }} {{ user.lastName }}</a>
+                    <span class="f-light">{{ user.email }}</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="user-prediction">
+            <img src="https://st2.depositphotos.com/1001911/7684/v/600/depositphotos_76840879-stock-illustration-depressed-emoticon.jpg"  width="200" alt="Unhappy" />
+            <p>These users are predicted to leave because they have low attendance at events and training, and they are not active.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="appointment">
+      <div class="card">
+        <div class="card-header card-no-border">
+          <div class="header-top">
+            <h5 class="m-0">Highly Involved Users</h5>
+          </div>
+        </div>
+        <div class="card-body pt-0">
+          <div class="appointment-table customer-table table-responsive">
+            <table class="table table-bordernone">
+              <tbody>
+                <tr *ngFor="let user of highlyInvolvedUsers">
+                  <td>
+                    <img class="img-fluid img-40 rounded-circle me-2" src="https://st2.depositphotos.com/1007566/12271/v/600/depositphotos_122718586-stock-illustration-avatar-man-cartoon.jpg" width="50" alt="user" />
+                  </td>
+                  <td class="img-content-box">
+                    <a class="f-w-500" [routerLink]="'user-profile/' + user.id">{{ user.firstName }} {{ user.lastName }}</a>
+                    <span class="f-light">{{ user.email }}</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="user-prediction">
+            <img src="https://st.depositphotos.com/1001911/1222/v/600/depositphotos_12221489-stock-illustration-big-smile-emoticon.jpg" width="200" alt="Happy" />
+            <p>These highly involved users can be helpful in the future growth of the club.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,78 @@
+<app-breadcrumb [title]="'Clubs'" [items]="['Home', 'Clubs']" [active_item]="'Clubs'"></app-breadcrumb>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-xl-9 xl-60 order-xl-0 order-1 box-col-12">
+      <div class="row">
+
+        
+        <div class="col-xl-12">
+
+          <div class="card custom-container d-flex flex-column">
+            <div class="blog-box blog-list" *ngFor="let club of tableItem$ | async">
+            <div>
+              <a class="btn btn-success position-absolute top-0 end-0 btn-sm" style="margin-top: 20px; margin-right: 30px; height: 50px; width: 200px;" [routerLink]="'/club/club-details/' + club.idC">
+                <app-feather-icons [icon]="'check-circle'"></app-feather-icons>  View Details
+              </a>
+              
+            </div>
+            <h6>{{ club.nameC }}</h6>
+              <div class="col-sm-5"><img class="img-fluid sm-100-w" [src]="club.logo?.url" alt="Club Logo" /></div>
+              <div class="col-sm-7">
+                <div class="blog-details">
+                  
+                  <div class="blog-box">
+                    <p class="mt-0">{{ club.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="col-xl-3 xl-40 box-col-12 learning-filter">
+      <div class="md-sidebar">
+        <a class="btn btn-primary email-aside-toggle md-sidebar-toggle">Learning filter</a>
+        <div class="md-sidebar-aside job-sidebar">
+          <div class="default-according style-1 faq-accordion job-accordion" id="accordionoc">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="card">
+                  <div class="card-header" aria-controls="collapseExample">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-bs-toggle="collapse" data-target="#collapseicon" aria-expanded="true" aria-controls="collapseicon">Find Club</button>
+                    </h5>
+                  </div>
+                  <div class="collapse show" id="collapseicon" aria-labelledby="collapseicon" data-parent="#accordion">
+                    <div class="card-body filter-cards-view animate-chk">
+                      <div class="job-filter">
+                        <div class="faq-form">
+                          <input class="form-control" type="text" placeholder="Search.." />
+                          <i class="search-icon" data-feather="search"></i>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary" type="button">Filter</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--<form (ngModel)="searchTermabil edited">
+  <input type="text" [(ngModel)]="searchTerm" name="searchTerm" required>
+  <button formняяweet (click)="filterClubsByCategory(searchTerm)">
+  </button>-->
+

@@ -1,0 +1,61 @@
+<app-breadcrumb [title]="'Form Validation'" [items]="['Forms', 'Form Control']" [active_item]="'Form Validation'"></app-breadcrumb>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Modify Club</h5>
+          <span>Update the club information below.</span>
+        </div>
+        <div class="card-body">
+          <form class="needs-validation" novalidate [formGroup]="updateForm" (ngSubmit)="updateClub(id, updateForm.value.nameC, updateForm.value.description, selectedFile)">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label" for="nameC">Club Name</label>
+                <input class="form-control" id="nameC" type="text" placeholder="Enter club name" formControlName="nameC">
+                <div *ngIf="updateForm.get('nameC').invalid && (updateForm.get('nameC').dirty || updateForm.get('nameC').touched)" class="invalid-feedback">
+                  Please enter a club name.
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="description">Description</label>
+                <input class="form-control" id="description" type="text" placeholder="Enter description" formControlName="description">
+                <div *ngIf="updateForm.get('description').invalid && (updateForm.get('description').dirty || updateForm.get('description').touched)" class="invalid-feedback">
+                  Please enter a description.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="categorie">Category</label>
+                <select class="form-select" id="categorie" formControlName="categorie">
+                  <option *ngFor="let category of CategValues" [value]="category">{{ category }}</option>
+                </select>
+                <div *ngIf="updateForm.get('categorie').invalid && (updateForm.get('categorie').dirty || updateForm.get('categorie').touched)" class="invalid-feedback">
+                  Please select a category.
+                </div>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="logo">Logo</label>
+                <input class="form-control" id="logo" type="file" (change)="onFileSelected($event)" accept="image/*">
+                <div *ngIf="updateForm.get('logo').invalid && (updateForm.get('logo').dirty || updateForm.get('logo').touched)" class="invalid-feedback">
+                  Please select a logo image.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="websiteURL">Website URL</label>
+                <input class="form-control" id="websiteURL" type="text" placeholder="Enter website URL" formControlName="websiteURL">
+                <div *ngIf="updateForm.get('websiteURL').invalid && (updateForm.get('websiteURL').dirty || updateForm.get('websiteURL').touched)" class="invalid-feedback">
+                  Please enter a website URL.
+                </div>
+              </div>
+            </div>
+            
+            <button class="btn btn-primary" type="submit">update club</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<app-breadcrumb [title]="'Form Validation'" [items]="['Forms', 'Form Control']" [active_item]="'Form Validation'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Add a New Department</h5>
+          <span>Fill out the form below to add a new department.</span>
+        </div>
+        <div class="card-body">
+          <form class="needs-validation" novalidate [ngClass]="{ 'was-validated': validate }" (ngSubmit)="submit()">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label" for="nameD">Department Name</label>
+                <input class="form-control" id="nameD" type="text" placeholder="Enter department name" [(ngModel)]="newDepartment.nameD" name="nameD" required>
+                <div class="invalid-feedback">Please enter a department name.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="description">Description</label>
+                <input class="form-control" id="description" type="text" placeholder="Enter description" [(ngModel)]="newDepartment.description" name="description" required>
+                <div class="invalid-feedback">Please enter a description.</div>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="memberCount">Member Count</label>
+                <input class="form-control" id="memberCount" type="number" placeholder="Enter member count" [(ngModel)]="newDepartment.memberCount" name="memberCount" required>
+                <div class="invalid-feedback">Please enter a valid member count.</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" id="agreeTerms" type="checkbox" [(ngModel)]="agreeTerms" name="agreeTerms" required>
+                <label class="form-check-label" for="agreeTerms">Agree to terms and conditions</label>
+                <div class="invalid-feedback">You must agree to the terms and conditions.</div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit Form</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,70 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Basic Table</h5>
+        </div>
+        <div class="card-body custom-datatable noscroll">
+          <div class="custom-datatable table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Club Name</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Creation Date</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Logo</th>
+                  <th scope="col">Website URL</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody *ngIf="tableItem$ | async as clubs; else loading">
+                <tr *ngFor="let club of clubs">
+                  <td>{{ club.idC }}</td>
+                  <td><a [routerLink]="['/club/club-details', club.idC]">{{ club.nameC }}</a></td>
+                  <td>{{ club.idC }}</td>
+                  <td><a [routerLink]="['/club/club-stats', club.idC]">{{ club.nameC }}</a></td>
+
+                  <td>{{ club.description }}</td>
+                  <td><a [routerLink]="['/club/club-stats', club.idC]">{{ club.description }}</a></td>
+                  <td>{{ club.creationDate | date: 'dd/MM/yyyy' }}</td>
+                  <td>{{ club.categorie }}</td> 
+                    <td><img class="img-40" src="{{ club.logo.url }}" alt=""></td>  
+                   <!-- <td><img class="img-40" [src]="club.logo" alt="Club Logo"></td> -->
+                  <!--  <td><img class="img-40" [src]="club.logo" alt=""></td>--> <!-- Bind src attribute to club.logo -->
+
+                  <td>{{ club.websiteURL }}</td>
+                  <td>
+                    <div class="action">
+              
+                      <button class="edit" (click)="promptForPrediction(club.idC)">
+                        <i class="icon-trash"></i> Go to Prediction
+                      </button>
+                      <button class="edit" (click)="editClub(club.idC)">
+                        <i class="icon-pencil-alt"></i> Edit
+                      </button>
+                      <button class="edit" (click)="analyze(club.idC)">
+                        <i class="icon-pencil-alt"></i> analyze
+                      </button>
+                      <button class="delete" (click)="deleteData(club.idC)">
+                        <i class="icon-trash"></i> Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends -->
+
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>

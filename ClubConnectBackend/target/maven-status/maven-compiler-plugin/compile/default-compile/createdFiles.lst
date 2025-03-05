@@ -1,0 +1,13 @@
+tn\esprit\clubconnect\ClubConnectApplication.class
+tn\esprit\clubconnect\entities\Department.class
+tn\esprit\clubconnect\entities\User.class
+tn\esprit\clubconnect\entities\Training.class
+tn\esprit\clubconnect\entities\Reclamation.class
+tn\esprit\clubconnect\entities\Interview.class
+tn\esprit\clubconnect\entities\Categ.class
+tn\esprit\clubconnect\entities\TypeR.class
+tn\esprit\clubconnect\entities\Event.class
+tn\esprit\clubconnect\entities\Role.class
+tn\esprit\clubconnect\repositories\InterviewRepository.class
+tn\esprit\clubconnect\controller\InterviewController.class
+tn\esprit\clubconnect\entities\Club.class

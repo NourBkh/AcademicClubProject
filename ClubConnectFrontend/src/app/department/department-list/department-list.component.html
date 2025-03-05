@@ -1,0 +1,51 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Basic Table</h5>
+          </div>
+          <div class="card-body custom-datatable noscroll">
+            <div class="custom-datatable table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Department Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Member Count</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="tableItem$ | async as departments; else loading">
+                  <tr *ngFor="let department of departments">
+                    <td>{{ department.idD }}</td>
+                    <td>{{ department.nameD }}</td>
+                    <td>{{ department.description }}</td>
+                    <td>{{ department.memberCount }}</td>
+                    <td>
+                      <div class="action">
+                        <button class="edit" (click)="editDepartment(department.idD)">
+                          <i class="icon-pencil-alt"></i> Edit
+                        </button>
+                        <button class="delete" (click)="deleteData(department.idD)">
+                          <i class="icon-trash"></i> Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends -->
+  
+  <ng-template #loading>
+    <div>Loading...</div>
+  </ng-template>
+  

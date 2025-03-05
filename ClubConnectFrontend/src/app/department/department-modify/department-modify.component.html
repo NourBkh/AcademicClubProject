@@ -1,0 +1,53 @@
+<app-breadcrumb [title]="'Modify Department'" [items]="['Departments', 'Modify Department']" [active_item]="'Modify Department'"></app-breadcrumb>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Modify the Department</h5>
+          <span>Change department information</span>
+        </div>
+        <div class="card-body">
+          <form class="needs-validation" novalidate [formGroup]="updateForm" (ngSubmit)="updateDepartment()">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label" for="nameD">Department Name</label>
+                <input class="form-control" id="nameD" type="text" placeholder="Enter department name" formControlName="nameD" required>
+                <div *ngIf="updateForm.get('nameD').invalid && (updateForm.get('nameD').dirty || updateForm.get('nameD').touched)" class="invalid-feedback">
+                  <div *ngIf="updateForm.get('nameD').errors.required">Please enter a department name.</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="description">Description</label>
+                <input class="form-control" id="description" type="text" placeholder="Enter description" formControlName="description" required>
+                <div *ngIf="updateForm.get('description').invalid && (updateForm.get('description').dirty || updateForm.get('description').touched)" class="invalid-feedback">
+                  <div *ngIf="updateForm.get('description').errors.required">Please enter a description.</div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="memberCount">Member Count</label>
+                <input class="form-control" id="memberCount" type="number" placeholder="Enter member count" formControlName="memberCount" required>
+                <div *ngIf="updateForm.get('memberCount').invalid && (updateForm.get('memberCount').dirty || updateForm.get('memberCount').touched)" class="invalid-feedback">
+                  <div *ngIf="updateForm.get('memberCount').errors.required">Please enter a member count.</div>
+                </div>
+              </div>
+            </div>
+            <!-- Add more form fields here as needed -->
+
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" id="agreeTerms" type="checkbox" formControlName="agreeTerms" required>
+                <label class="form-check-label" for="agreeTerms">Agree to terms and conditions</label>
+                <div *ngIf="updateForm.get('agreeTerms').invalid && (updateForm.get('agreeTerms').dirty || updateForm.get('agreeTerms').touched)" class="invalid-feedback">
+                  <div *ngIf="updateForm.get('agreeTerms').errors.required">You must agree to the terms and conditions.</div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit Form</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

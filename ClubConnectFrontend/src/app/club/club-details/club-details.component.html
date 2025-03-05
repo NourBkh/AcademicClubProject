@@ -1,0 +1,95 @@
+<app-breadcrumb [title]="'Club Details'" [items]="['Home', 'Clubs']" [active_item]="'Club Details'"></app-breadcrumb>
+
+<div class="container-fluid">
+  <div class="row product-page-main p-0">
+    <div class="col-xxl-5 box-col-6 order-xxl-0 order-1">
+      <div class="card">
+        <section>
+              <!-- Display QR code here -->
+              
+              <!-- <img [src]="qrCodeImage" alt="QR Code" *ngIf="qrCodeImage"> -->
+            </section>
+        <div class="card-body">
+          <div *ngIf="club">
+            <!-- <h3>{{ club.logo.url }}</h3> -->
+            <!-- <img class="img-40" src="{{ club.logo.url }}" alt=""> -->
+            <img class="img-40" src="{{ club.logo.url }}" alt="" style="width: 200px; height: auto;">
+            <div class="m-t-15 btn-showcase">
+              <a class="btn btn-primary" type="button"  (click)="promptForPrediction(club.idC)">
+              <i class="search-icon"></i> Go to Prediction</a>
+            
+          
+            <a class="btn btn-primary" type="button"  (click)="analyze(club.idC)">
+                      <i class="search-icon"></i> analyze </a>
+                   
+            </div>
+            <hr />
+            <div>
+          <div class="product-page-details" *ngIf="club">
+            <h3>{{ club.nameC }}</h3>
+            <p>{{ club.description }}</p>
+            <hr />
+            <div>
+              <table class="product-page-width">
+                <tbody>
+                  <tr>
+                    <td><b>Category:</b></td>
+                    <td>{{ club.categorie }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Date:</b></td>
+                    <td class="txt-success">{{ club.creationDate | date: 'dd/MM/yyyy' }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Website:</b></td>
+                    <td>{{ club.websiteURL }}</td>
+                  </tr>
+                  <!-- Add more club attributes as needed -->
+                </tbody>
+              </table>
+              
+            </div>
+            <hr />
+            <hr />
+            <section>
+              <!-- Display QR code here -->
+              <div *ngIf="qrCodeData">
+                <img [src]="qrCodeData" alt="QR Code">
+              </div>
+              <!-- <img [src]="qrCodeImage" alt="QR Code" *ngIf="qrCodeImage"> -->
+            </section>
+            <div class="row">
+              <div class="col-md-4">
+                <h6 class="product-title">Rate Now</h6>
+              </div>
+              <div class="col-md-8">
+                <div class="d-flex">
+                  <ngb-rating [rate]="3"></ngb-rating>
+                  <span>(250 reviews)</span>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="m-t-15 btn-showcase">
+              <a class="btn btn-primary" type="button" title="" [routerLink]="['/club/club-list']">Back To List</a>
+              <a class="btn btn-primary" type="button"  (click)="editClub(club.idC)">
+                <i class="icon-pencil-alt"></i> Update Club</a>
+              
+                <a class="btn btn-primary" type="button" (click)="deleteData(club.idC)">
+                <i class="icon-trash"></i>Delete Club
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-3 col-md-6 box-col-6">
+      <div class="card">
+        <div class="card-body">
+          <!-- side-bar collapsible block start -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
